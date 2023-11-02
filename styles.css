@@ -1,0 +1,134 @@
+/* styles.css */
+
+/* Réinitialisation de certains styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    padding-bottom: 50px; /* Espace pour le footer */
+}
+
+header {
+    background-color: #00457c;
+    color: #ffffff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 2rem;
+}
+
+#accueil {
+    text-align: center;
+    padding: 50px 0;
+    background: url('path-to-your-background-image.jpg') no-repeat center center/cover;
+}
+
+#accueil h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    color: #ffffff;
+}
+
+#accueil img {
+    max-width: 150px;
+    margin: 20px 0;
+    border-radius: 50%;
+}
+
+#accueil p {
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+section h2 {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #00457c;
+}
+
+section p, section a {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: #00457c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+form input[type='text'],
+form input[type='email'],
+form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+}
+
+form button {
+    padding: 0.7rem 2rem;
+    background-color: #00457c;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #003366;
+}
+
+footer {
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin-bottom: 0;
+}
