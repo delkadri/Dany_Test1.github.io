@@ -1,18 +1,19 @@
 /* styles.css */
 
-/* Réinitialisation de certains styles par défaut */
+/* Reset some default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} 
+
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
-    padding-bottom: 50px; /* Espace pour le footer */
+    padding-bottom: 50px; /* Space for the footer */
 }
 
 header {
@@ -46,28 +47,43 @@ section {
     padding: 2rem;
 }
 
-#accueil {
+#home {
     text-align: center;
     padding: 50px 0;
     background: url('path-to-your-background-image.jpg') no-repeat center center/cover;
+    position: relative; /* Ajouté pour la superposition */
 }
 
-#accueil h1 {
-    margin-bottom: 0.5rem;
-    font-size: 2.5rem;
-    color: #ffffff;
+/* Ajout d'un overlay pour une meilleure lisibilité du texte */
+#home::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Noir semi-transparent */
+    z-index: 0;
 }
 
-#accueil img {
+/* Assurez-vous que le contenu de #home est positionné au-dessus de l'overlay */
+#home > * {
+    position: relative;
+    z-index: 1;
+}
+
+#home h1, #home p {
+    color: #ffffff; /* Blanc pour un meilleur contraste */
+}
+
+#home img {
     max-width: 150px;
     margin: 20px 0;
     border-radius: 50%;
 }
 
-#accueil p {
-    font-size: 1.1rem;
-    color: #ffffff;
-}
+
 
 section h2 {
     margin-bottom: 1rem;
@@ -124,8 +140,8 @@ footer {
     color: #ffffff;
     text-align: center;
     padding: 1rem 0;
-    position: absolute;
-    bottom: 0;
+    position: relative; /* changé de 'absolute' à 'relative' */
+    bottom: 0; /* cette ligne peut être supprimée car 'relative' ne l'utilise pas */
     width: 100%;
 }
 
