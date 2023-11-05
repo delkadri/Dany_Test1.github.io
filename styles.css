@@ -46,26 +46,53 @@ header nav ul li a:hover {
 section {
     padding: 2rem;
 }
+#slideshow {
+    width: 100%;
+    height: 300px; /* Set the height of the slideshow */
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .mySlides {
+    display: none;
+    width: 100%; /* Assurez-vous que les images remplissent le conteneur */
+    height: auto; /* Pour maintenir le ratio de l'image */
+  }
+  
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    transition: left 0.5s ease-in-out;
+    opacity: 0; /* Hide all slides initially */
+  }
+  
+  .slide img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .slide.active {
+    left: 0;
+    opacity: 1; /* Only the active slide is visible */
+  }
+  
 
 #home {
     text-align: center;
     padding: 50px 0;
     background: url('path-to-your-background-image.jpg') no-repeat center center/cover;
     position: relative; /* Ajouté pour la superposition */
+    
 }
 
-/* Ajout d'un overlay pour une meilleure lisibilité du texte */
+/* Home overlay to ensure content is readable */
 #home::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Noir semi-transparent */
-    z-index: 0;
-}
+    background-color: rgba(0, 0, 0, 0.3); /* Dark overlay for better readability */
+    z-index: 1; /* Above the slides but below the text */
+  }
 
 /* Assurez-vous que le contenu de #home est positionné au-dessus de l'overlay */
 #home > * {
@@ -74,14 +101,17 @@ section {
 }
 
 #home h1, #home p {
-    color: #ffffff; /* Blanc pour un meilleur contraste */
+    position: relative;
+    z-index: 2;
+  }
+
+  #home img {
+    width: 100%; /* Make the image fill the container width */
+    height: 100%; /* Make the image fill the container height */
+    object-fit: cover; /* Cover the area without stretching */
+    border-radius: 0; /* Assuming you want to remove the rounded corners for full coverage */
 }
 
-#home img {
-    max-width: 150px;
-    margin: 20px 0;
-    border-radius: 50%;
-}
 
 
 
@@ -148,3 +178,38 @@ footer {
 footer p {
     margin-bottom: 0;
 }
+
+/* Carousel Indicators */
+.dot-container  {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  /* Classe active pour les points */
+.active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Style pour le conteneur des points */
+  .dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #ddd; /* Couleur de fond pour le conteneur des points */
+  }
+  
